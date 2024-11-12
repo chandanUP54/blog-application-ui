@@ -322,7 +322,7 @@ const AdminDatatable = () => {
           <div>
             <label>Summary</label>
             <Editor
-              apiKey="kcke9qjp1i7gzufy796i8r8f4k9zu8dfpo8x131sz53e5bbq"
+              apiKey="jaf1ohahrq1t53uxxun7rqozmus6624ued8i5jsd3docnhno"
               value={summary}
               onEditorChange={(newContent) => setSummary(newContent)}
               init={{
@@ -341,7 +341,7 @@ const AdminDatatable = () => {
           <div>
             <label>Content</label>
             <Editor
-              apiKey="kcke9qjp1i7gzufy796i8r8f4k9zu8dfpo8x131sz53e5bbq"
+              apiKey="jaf1ohahrq1t53uxxun7rqozmus6624ued8i5jsd3docnhno"
               value={content}
               onEditorChange={(newContent) => setContent(newContent)}
               init={{
