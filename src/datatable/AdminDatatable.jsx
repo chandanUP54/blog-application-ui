@@ -43,9 +43,9 @@ const AdminDatatable = () => {
         url: `${BASE_API_URL}/blogs/allx`,
         type: "POST",
         contentType: "application/json",
-        // error: function (xhr, status, error) {
-        //   handleLogout()
-        // },
+        error: function (xhr, status, error) {
+          handleLogout()
+        },
         headers: {
           Authorization: `Bearer ${jwt}`,
         },
