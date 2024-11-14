@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BASE_API_URL } from "../auth/url";
-import { AuthContext } from "../context/AuthContext";
 const Home = () => {
   const [recentBlog, setRecentBlog] = useState([]);
 

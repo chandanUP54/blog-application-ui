@@ -9,8 +9,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import { AuthContext } from "../context/AuthContext";
 
 const AdminDatatable = () => {
-
-  const {isTokenExpired,handleLogout}=useContext(AuthContext)
+  const { isTokenExpired, handleLogout } = useContext(AuthContext);
   const jwt = localStorage.getItem("accessJwt");
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
@@ -31,10 +30,8 @@ const AdminDatatable = () => {
     return txt.innerText || txt.textContent; // Use innerText or textContent for plain text
   }
 
-
   useEffect(() => {
-
-    if (jwt && isTokenExpired(jwt)) {
+    if (jwt &&  isTokenExpired(jwt)) {
       handleLogout();
     }
 
@@ -46,6 +43,9 @@ const AdminDatatable = () => {
         url: `${BASE_API_URL}/blogs/allx`,
         type: "POST",
         contentType: "application/json",
+        // error: function (xhr, status, error) {
+        //   handleLogout()
+        // },
         headers: {
           Authorization: `Bearer ${jwt}`,
         },
@@ -130,7 +130,7 @@ const AdminDatatable = () => {
       content,
     };
 
-   // console.log("is edit mode", isEditMode, editRowId);
+    // console.log("is edit mode", isEditMode, editRowId);
 
     if (isEditMode) {
       //console.log("editing-->>");
@@ -158,7 +158,7 @@ const AdminDatatable = () => {
           console.error("Error:", error);
         });
     } else {
-     // console.log("posting-->>");
+      // console.log("posting-->>");
 
       fetch(`${BASE_API_URL}/blogs/post`, {
         method: "POST",
@@ -221,7 +221,7 @@ const AdminDatatable = () => {
           },
           success: function () {
             dataTableRef.current.ajax.reload();
-            resetForm()
+            resetForm();
           },
         });
       }

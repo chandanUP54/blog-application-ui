@@ -3,29 +3,18 @@ import Navbar from "./navbar/Navbar";
 import Footer from "./navbar/Footer";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
-import { useContext, useEffect, useState } from "react";
 import User from "./profile/User";
 import Articles from "./blogs/articles/Articles";
 import Profile from "./auth/Profile";
 import AdminDatatable from "./datatable/AdminDatatable";
 import BlogPage from "./blogs/blogpage/BlogPage";
 import Home from "./home/Home";
-import { AuthContext } from "./context/AuthContext";
 import Test from "./blogs/blogpage/Test";
-// import dotenv from 'dotenv';
 
 
 function App() {
-  const { isTokenExpired, handleLogout } = useContext(AuthContext);
-  const token = localStorage.getItem("accessJwt");
   const isAuthenticated = localStorage.getItem("isAuthenticated");
   const role = localStorage.getItem("role");
-
-  useEffect(() => {
-    if (token && isTokenExpired(token)) {
-      handleLogout();
-    }
-  }, []);
 
   return (
     <div>

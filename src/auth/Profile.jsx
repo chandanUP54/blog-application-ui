@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BASE_API_URL } from "./url";
 import { AuthContext } from "../context/AuthContext";
+import { error } from "jquery";
 
 const Profile = () => {
   const jwt = localStorage.getItem("accessJwt");
@@ -24,6 +25,10 @@ const Profile = () => {
         setProfile(data);
        
         console.log(data.email);
+        
+      }).catch((error)=>{
+        console.log(error);
+        handleLogout()
         
       });
   }, [jwt]);

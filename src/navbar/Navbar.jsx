@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-
-  // const { isAuthenticated, handleLogout } = useAuth();
-
-  // console.log("is auth",isAuthenticated);
-  
 
   const isAuthenticated = localStorage.getItem("isAuthenticated");
   const role = localStorage.getItem("role");

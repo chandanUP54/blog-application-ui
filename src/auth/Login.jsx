@@ -30,12 +30,13 @@ const Login = () => {
       })
       .then((data) => {
         console.log("Login successful:", data);
+        
         const  role  = data.role;
-      
         localStorage.setItem("isAuthenticated", "true");
         localStorage.setItem("role", role);
         localStorage.setItem("accessJwt",data.accessToken)
-
+        localStorage.setItem("refreshJwt",data.refreshToken)
+        sessionStorage.setItem("initialRefreshDone", "true");
         window.location.href = "/"; 
 
       })
